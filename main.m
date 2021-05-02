@@ -1,4 +1,4 @@
-[ACC_X, ACC_Y, ACC_Z] = openFile("InputFiles/acc_exp08_user04.txt");
+[ACC_X, ACC_Y, ACC_Z] = openFile("acc_exp01_user01.txt");
 tiledlayout(3,1)
 
 nexttile
