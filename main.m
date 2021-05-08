@@ -1,15 +1,15 @@
-[ACC_X, ACC_Y, ACC_Z] = openFile("InputFiles/acc_exp08_user04.txt");
-tiledlayout(3,1)
+[ACC_X, ACC_Y, ACC_Z] = openFile("InputFiles/acc_exp02_user01.txt");
+figure(1)
 
-nexttile
+subplot(311)
 displayGraph(ACC_X)
 ylabel("ACC_X")
 
-nexttile
+subplot(312)
 displayGraph(ACC_Y)
 ylabel("ACC_Y")
 
-nexttile
+subplot(313)
 displayGraph(ACC_Z)
 ylabel("ACC_Z")
 
@@ -22,24 +22,27 @@ n=(0:N-1)';
 t=n*Ts; 
 m_max=2000;
 m=-m_max:m_max;
+
 %DFT
-X=fftshift(fft(ACC_X));
-Y=fftshift(fft(ACC_Y));
-Z=fftshift(fft(ACC_Z));
-X(abs(X)<0.001)=0;
-
-if(mod(N,2)==0)
-    w=-ws/2:ws/N:ws/2-ws/N;
-    Omega=-pi:2*pi/N:pi-2*pi/N;
-else
-    w=-ws/2+ws/N/2:ws/N:ws/2-ws/N/2;
-    Omega=-pi+pi/N:2*pi/N:pi-pi/N;
-end
-
-figure(2)
-subplot(311)
-plot(w, abs(X));
-subplot(312)
-plot(w, abs(Y));
-subplot(313)
-plot(w, abs(Z));
+%DFT(ACC_X,ACC_Y,ACC_Z,ws,N,300,1200)%1
+%DFT(ACC_X,ACC_Y,ACC_Z,ws,N,1210,1385)%2
+%DFT(ACC_X,ACC_Y,ACC_Z,ws,N,1388,2192)%3
+%DFT(ACC_X,ACC_Y,ACC_Z,ws,N,2190,2386)%4
+%DFT(ACC_X,ACC_Y,ACC_Z,ws,N,2390,3285)%5
+%DFT(ACC_X,ACC_Y,ACC_Z,ws,N,3296,3689)%6
+%DFT(ACC_X,ACC_Y,ACC_Z,ws,N,3700,4475)%7
+%DFT(ACC_X,ACC_Y,ACC_Z,ws,N,4480,4755)%8
+%DFT(ACC_X,ACC_Y,ACC_Z,ws,N,4800,5610)%9
+%DFT(ACC_X,ACC_Y,ACC_Z,ws,N,5630,5880)%10
+%DFT(ACC_X,ACC_Y,ACC_Z,ws,N,5890,6760)%11
+%DFT(ACC_X,ACC_Y,ACC_Z,ws,N,6770,6930)%12
+DFT(ACC_X,ACC_Y,ACC_Z,ws,N,7500,8300)%13
+DFT(ACC_X,ACC_Y,ACC_Z,ws,N,8500,9750)%14
+DFT(ACC_X,ACC_Y,ACC_Z,ws,N,9950,11117)%15
+DFT(ACC_X,ACC_Y,ACC_Z,ws,N,11130,12472)%16
+%DFT(ACC_X,ACC_Y,ACC_Z,ws,N,13120,13950)%17
+%DFT(ACC_X,ACC_Y,ACC_Z,ws,N,14083,14800)%18
+%DFT(ACC_X,ACC_Y,ACC_Z,ws,N,14800,15600)%19
+%DFT(ACC_X,ACC_Y,ACC_Z,ws,N,15650,16400)%20
+%DFT(ACC_X,ACC_Y,ACC_Z,ws,N,16500,17200)%21
+%DFT(ACC_X,ACC_Y,ACC_Z,ws,N,17330,18000)%22
