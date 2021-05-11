@@ -18,10 +18,23 @@ else
     f=-fs/2+fs/N/2:fs/N:fs/2-fs/N/2;
 end
 
+X(abs(X)<abs(0.8*max(X)))=0;
+Y(abs(Y)<abs(0.8*max(Y)))=0;
+Z(abs(Z)<abs(0.8*max(Z)))=0;
+
 figure()
 subplot(311)
-plot(f,abs(X));
+stem(f,abs(X));
+xlabel('Freq[Hz]')
+ylabel('Magnitude')
+title("ACC_X")
 subplot(312)
-plot(f,abs(Y));
+stem(f,abs(Y));
+xlabel('Freq[Hz]')
+ylabel('Magnitude')
+title("ACC_Y")
 subplot(313)
-plot(f,abs(Z));
+stem(f,abs(Z));
+xlabel('Freq[Hz]')
+ylabel('Magnitude')
+title("ACC_Z")
