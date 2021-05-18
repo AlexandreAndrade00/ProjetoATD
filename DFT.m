@@ -31,8 +31,7 @@ for acc = data
     % encontrar os índices do máximo da magnitude do sinal
     ind = find(abs(dft-dft_max)<0.001);
     
-    % encontrar as frequências correspondentes ao máximo de magnitude    
-    
+    % encontrar as frequências correspondentes ao máximo de magnitude
     f_relev = [f_relev, abs(f(ind(1)))];
 
 	[pks, locs] = findpeaks(abs(dft));
