@@ -1,6 +1,10 @@
-function displayGraph(arrayData)
-X_axis = 1:length(arrayData);
-plot(X_axis,arrayData);
-xt = get(gca, 'XTick');
-set(gca, 'XTick', xt, 'XTickLabel', round(double(xt/50/60),2))
-xlabel('Time(min)')
+function displayGraph(arrayData, color)
+fs=50;
+N=length(arrayData);
+t = linspace(0,(N-1)/fs,N);
+if strcmp(color, 'none')
+	plot(t,arrayData);
+else
+	plot(t,arrayData, color);
+end
+xlabel('Time(seg)')
